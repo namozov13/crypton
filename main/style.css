@@ -1,0 +1,470 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    user-select: none;
+}
+
+.hidden {
+    display: none !important;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+body {
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    background-color: #0f172a;
+}
+
+.periodic-table {
+    display: grid;
+    grid-template-columns: repeat(10, 100px);
+    grid-template-rows: repeat(11, 50px);
+    grid-row-gap: 1px;
+    grid-column-gap: 1px;
+}
+
+.element:hover {
+    transform: scale(1.06) translateY(-5px);
+
+}
+
+.element {
+    display: flex;
+    padding: 3px 7px;
+    font-weight: 600;
+    font-size: 10px;
+    justify-content: space-between;
+    border: #000 solid 1px;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+
+.elInfo {
+    max-height: 55px;
+}
+
+.elNum {
+    height: 15px;
+    width: 15px;
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.elName {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 9px;
+    display: flex;
+    text-align: left;
+}
+
+.elFormula {
+    text-transform: capitalize;
+}
+
+.s-part {
+    background-color: #ff0000;
+}
+
+.p-part {
+    background-color: #FCFB0B;
+}
+
+.d-part {
+    background-color: #77DAF9;
+}
+
+.f-part {
+    background-color: #0f0;
+}
+
+.elNum2 {
+    font-size: 10px;
+    height: 10px;
+    width: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.elNegative {
+    border: solid 1px #000;
+    border-radius: 15px;
+    width: 15px;
+    height: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8px;
+}
+
+.lantinity-title,
+.actinity-title {
+    gap: 10px;
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    transition: ease-in-out .3s;
+}
+
+.icon {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    left: 430px;
+    position: absolute;
+    top: 0;
+}
+
+.icon:hover {
+    .iconSvg {
+        transform: translateX(-105px);
+    }
+
+    .iconText {
+        display: inline;
+    }
+}
+
+.searchItems {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.searchBox {
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    transform: translateX(-70%);
+    z-index: 101;
+    background-color: #0f173a;
+    padding: 20px 30px;
+    border-radius: 8px;
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.x {
+    width: 20px;
+    margin-right: -20px;
+    margin-top: -10px;
+    cursor: pointer;
+}
+
+.results {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+}
+
+button {
+    background: none;
+    border: none;
+}
+
+input:focus-visible {
+    outline: none;
+}
+
+#showBtn {
+    background: none;
+    border: none;
+    position: absolute;
+
+    right: 300px;
+}
+
+.xmark {
+    width: 30px;
+    margin-left: -50px;
+    cursor: pointer;
+}
+
+.inputVal {
+    border: none;
+    border-radius: 8px;
+    width: 300px;
+    height: 40px;
+    padding: 10px 40px 10px 10px;
+}
+
+.searchIcon {
+    width: 40px;
+    transition: transform ease-in-out .4s;
+    cursor: pointer;
+}
+
+.searchIcon:hover {
+    transform: rotate(360deg);
+}
+
+.iconSvg {
+    min-width: 65px;
+    cursor: pointer;
+    margin-right: -105px;
+    transition: ease-in-out .4s;
+}
+
+.iconText {
+    color: #38bdf8;
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    display: none;
+}
+
+
+img {
+    width: 10px;
+}
+
+.stars {
+    display: flex;
+}
+
+.title {
+    font-size: 16px;
+}
+
+.symbol {
+    display: flex;
+    gap: 10px;
+}
+
+.table {
+    display: grid;
+    grid-template-columns: repeat(14, 100px);
+    grid-template-rows: 50px;
+    gap: 1px;
+}
+
+main {
+    margin-right: -30px;
+}
+
+.parts:has(.s:hover)~main .element:not(.s-part) {
+    opacity: 0.3;
+}
+
+.parts:has(.p:hover)~main .element:not(.p-part) {
+    opacity: 0.3;
+}
+
+.parts:has(.d:hover)~main .element:not(.d-part) {
+    opacity: 0.3;
+
+}
+
+.parts:has(.f:hover)~main .element:not(.f-part) {
+    opacity: 0.3;
+}
+
+.parts:has(.s:hover)~main .s-part {
+    transform: scale(1.03) translateY(-5px);
+}
+
+.parts:has(.p:hover)~main .p-part {
+    transform: scale(1.03) translateY(-5px);
+}
+
+.parts:has(.d:hover)~main .d-part {
+    transform: scale(1.03) translateY(-5px);
+}
+
+.parts:has(.f:hover)~main .f-part {
+    transform: scale(1.03) translateY(-5px);
+}
+
+.parts:has(.f:hover)~main .lantinity-title {
+    transform: scale(1.06) translateY(-5px);
+}
+
+.parts:has(.f:hover)~main .actinity-title {
+    transform: scale(1.06) translateY(-5px);
+}
+
+
+.parts {
+    display: flex;
+    justify-content: flex-start;
+    gap: 15px;
+    margin: 20px 0 25px 0;
+    padding: 0;
+    flex-direction: column;
+}
+
+
+.part {
+    width: 110px;
+    height: 38px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    background: rgba(30, 41, 59, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(8px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    color: #94a3b8;
+}
+
+.part.s {
+    border-left: 4px solid #ef4444;
+}
+
+.part.s:hover {
+    background: rgba(239, 68, 68, 0.15);
+    border-color: #ef4444;
+    color: #ef4444;
+    box-shadow: 0 0 15px rgba(239, 68, 68, 0.4);
+    text-shadow: 0 0 5px rgba(239, 68, 68, 0.5);
+    transform: translateY(-3px);
+}
+
+
+.part.p {
+    border-left: 4px solid #eab308;
+}
+
+.part.p:hover {
+    background: rgba(234, 179, 8, 0.15);
+    border-color: #eab308;
+    color: #eab308;
+    box-shadow: 0 0 15px rgba(234, 179, 8, 0.4);
+    text-shadow: 0 0 5px rgba(234, 179, 8, 0.5);
+    transform: translateY(-3px);
+}
+
+.part.d {
+    border-left: 4px solid #38bdf8;
+}
+
+.part.d:hover {
+    background: rgba(56, 189, 248, 0.15);
+    border-color: #38bdf8;
+    color: #38bdf8;
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+    text-shadow: 0 0 5px rgba(56, 189, 248, 0.5);
+    transform: translateY(-3px);
+}
+
+.part.f {
+    border-left: 4px solid #22c55e;
+}
+
+.part.f:hover {
+    background: rgba(34, 197, 94, 0.15);
+    border-color: #22c55e;
+    color: #22c55e;
+    box-shadow: 0 0 15px rgba(34, 197, 94, 0.4);
+    text-shadow: 0 0 5px rgba(34, 197, 94, 0.5);
+    transform: translateY(-3px);
+}
+
+@media (max-width: 1100px) {
+    body {
+        display: block;
+        padding: 5px;
+        margin: 65px 0 0 0;
+    }
+
+    .parts {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 10px;
+        margin-bottom: 25px;
+        width: 100%;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    main {
+        width: 100%;
+        overflow-x: auto;
+        display: block;
+        white-space: nowrap;
+        padding-bottom: 20px;
+    }
+
+    .periodic-table,
+    .table,
+    .lantinity-title,
+    .actinity-title {
+        transform: none !important;
+        margin: 0 auto 20px auto !important;
+        display: grid;
+    }
+
+    .lantinity-title,
+    .actinity-title {
+        display: flex;
+        text-align: center;
+        margin-top: 30px !important;
+        font-size: 1.2rem;
+    }
+
+    .icon {
+        position: absolute;
+        left: 130px;
+        top: 10px;
+    }
+
+    #showBtn {
+        position: absolute;
+        top: 25px;
+        left: 190px;
+    }
+
+    .inputVal {
+        width: 250px;
+        margin-right: 140px;
+    }
+
+    .searchItems {
+        width: 200px;
+    }
+
+    #hideBtn {
+        width: 20px;
+        height: 20px;
+    }
+
+    .searchBox {
+        width: 350px;
+        padding: 10px 15px;
+        left: 69%;
+    }
+
+}
