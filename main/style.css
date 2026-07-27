@@ -466,5 +466,12 @@ main {
         padding: 10px 15px;
         left: 69%;
     }
+    
+    .iconSvg {
+        transform: translateX(-105px);
+    }
 
+    .iconText {
+        display: inline;
+    }
 }
