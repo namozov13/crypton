@@ -18,7 +18,6 @@ Loyihadan onlayn foydalanish uchun quyidagi havolaga bosing:
 * 🔍 **Tezkor Qidiruv:** Elementlarni nomi, belgisi (simvoli) yoki tartib raqami bo'yicha onlayn qidirish.
 * 🌙 **Dark Mode (Qorong'i rejim):** Zamonaviy va ko'zga qulay bo'lgan qorong'i va yorug' rejim interfeysi.
 * 📊 **Batafsil Ma'lumotlar:** Har bir elementning kashf etilish tarixi, tabiatda tarqalishi va ishlatilish sohasi.
-* ⭐ **Tanlanganlar (Favorites):** Sevimli yoki kerakli elementlarni saqlab qo'yish imkoniyati.
 * 📱 **Moslashuvchan Dizayn (Responsive):** Barcha turdagi qurilmalarda (telefon, planshet, kompyuter) qulay ishlash.
 
 ---
