@@ -1,4 +1,5 @@
 :root {
+    --text: #000;
     --bg-body: #f1f5f9;
     --bg-card: #ffffff;
     --border-color: #cbd5e1;
@@ -15,6 +16,7 @@
 }
 
 .darkMode {
+    --text: #fff;
     --bg-body: #0f172a;
     --bg-card: #1e293b;
     --border-color: #334155;
@@ -234,6 +236,6 @@ main {
 }
 
 .linkText {
-    color: #f4f4f4;
+    color: var(--text);
     margin-top: 10px;
 }
