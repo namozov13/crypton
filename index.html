@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kimyo jadvali | Crypton</title>
+    <link rel="stylesheet" href="./main/style.css">
+    <link rel="icon" href="./main/assets/favicon.svg" type="image/svg">
+</head>
+
+<body>
+
+    <div class="parts">
+        <div class="part s">
+            <p>
+                s-qism
+            </p>
+        </div>
+        <div class="part p">
+            <p>
+                p-qism
+            </p>
+        </div>
+        <div class="part d">
+            <p>
+                d-qism
+            </p>
+        </div>
+        <div class="part f">
+            <p>
+                f-qism
+            </p>
+        </div>
+    </div>
+
+
+    <button id="showBtn">
+        <img src="./main/assets/search-dark.svg" alt="" class="searchIcon">
+    </button>
+
+    <button class="mode light" title="Change Theme.">
+        <img src="./main/assets/light.svg" alt="" class="modesvg">
+    </button>
+
+    <button class="mode dark" title="Change Theme.">
+        <img src="./main/assets/dark.svg" alt="" class="modesvg">
+    </button>
+
+
+
+    <div class="searchBox hidden" id="searchBox">
+        <button id="hideBtn">
+            <img src="./main/assets/x.svg" alt="" id="x" class="x">
+        </button>
+
+        <div class="searchItems">
+            <form>
+                <input type="text" id="value" class="inputVal" placeholder="Iltimos biror elementni kiriting ...">
+            </form>
+            <button id="clear">
+                <img src="./main/assets/xmark.svg" alt="" class="xmark">
+            </button>
+        </div>
+        <div class="results"></div>
+    </div>
+
+
+
+    <a href="" class="icon">
+        <img src="./main/assets/icon.svg" alt="" class="iconSvg">
+        <p class="iconText">Crypton</p>
+    </a>
+    <main>
+
+        <div class="periodic-table" id="periodic-table"></div>
+        <div class="lantinity-title">
+            <img src="main/assets/star_white.svg" alt="" id="star">
+            <h1 class="title">Lantanoidlar</h1>
+        </div>
+
+        <div class="table lanta"></div>
+
+
+        <div class="actinity-title">
+            <div class="stars">
+                <img src="./main/assets/star_white.svg" alt="" id="star">
+                <img src="./main/assets/star_white.svg" alt="" id="star">
+            </div>
+            <h1 class="title">Aktinoidlar</h1>
+        </div>
+        <div class="table akti"></div>
+    </main>
+    <div class="overlay hidden" id="overlay"></div>
+
+    <script src="./main/script.js"></script>
+</body>
+
+</html>
