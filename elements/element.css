@@ -239,3 +239,7 @@ main {
     color: var(--text);
     margin-top: 5px;
 }
+
+.linkGit {
+    margin: 0;
+}
