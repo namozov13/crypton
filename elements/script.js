@@ -22,12 +22,17 @@ const light = () => {
     lightBtn.classList.add("hidden")
     darkBtn.classList.remove("hidden")
 }
+const checkMode = () => {
 
-if (localStorage.getItem("mode") === "darkmode") {
-    dark()
-} else if (localStorage.getItem("mode") === "lightmode") {
-    light()
+    if (localStorage.getItem("mode") === "darkmode") {
+        dark()
+    } else if (localStorage.getItem("mode") === "lightmode") {
+        light()
+    }
 }
+
+checkMode()
+setInterval(checkMode, 1)
 
 lightBtn.addEventListener('click', () => {
     light()
