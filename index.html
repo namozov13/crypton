@@ -4,15 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="aejDNxiE3ZN8ablKSfEGth8jeVyijAlKuMoSxMcoRko" />
-    <title>Kimyo davriy jadvali — O'zbekcha interaktiv sistema | Crypton</title>
-    <meta name="description" content="Kimyoviy elementlarning davriy sistemasi, atom massasi va kashf etilish tarixi o'zbek tilida. Online kimyo jadvali — Crypton.">
+    <title>Kimyo jadvali | Crypton</title>
     <link rel="stylesheet" href="./main/style.css">
     <link rel="icon" href="./main/assets/favicon.svg" type="image/svg">
 </head>
 
-<body>
-
+<body class="lightMode">
     <div class="parts">
         <div class="part s">
             <p>
@@ -36,24 +33,26 @@
         </div>
     </div>
 
+    <div class="btns">
 
-    <button id="showBtn">
-        <img src="./main/assets/search-dark.svg" alt="" class="searchIcon">
-    </button>
+        <button id="showBtn">
+            <img src="./main/assets/search-dark.svg" alt="search-icon" class="searchIcon">
+        </button>
 
-    <button class="mode light hidden" title="Change Theme.">
-        <img src="./main/assets/light.svg" alt="" class="modesvg">
-    </button>
+        <button class="mode light hidden " title="Change Theme.">
+            <img src="./main/assets/light.svg" alt="light" class="modesvg">
+        </button>
 
-    <button class="mode dark" title="Change Theme.">
-        <img src="./main/assets/dark.svg" alt="" class="modesvg">
-    </button>
+        <button class="mode dark" title="Change Theme.">
+            <img src="./main/assets/dark.svg" alt="dark" class="modesvg">
+        </button>
+    </div>
 
 
 
     <div class="searchBox hidden" id="searchBox">
         <button id="hideBtn">
-            <img src="./main/assets/x.svg" alt="" id="x" class="x">
+            <img src="./main/assets/x.svg" alt="image" id="x" class="x">
         </button>
 
         <div class="searchItems">
@@ -61,7 +60,7 @@
                 <input type="text" id="value" class="inputVal" placeholder="Iltimos biror elementni kiriting ...">
             </form>
             <button id="clear">
-                <img src="./main/assets/xmark.svg" alt="" class="xmark">
+                <img src="./main/assets/xmark.svg" alt="image" class="xmark">
             </button>
         </div>
         <div class="results"></div>
@@ -69,15 +68,15 @@
 
 
 
-    <a href="https://github.com/namozov13/crypton/" target="_blank" class="icon">
-        <img src="./main/assets/icon.svg" alt="" class="iconSvg">
+    <a href="https://github.com/namozov13/crypton/" class="icon">
+        <img src="./main/assets/icon.svg" alt="image" class="iconSvg">
         <p class="iconText">Crypton</p>
     </a>
     <main>
 
         <div class="periodic-table" id="periodic-table"></div>
         <div class="lantinity-title">
-            <img src="main/assets/star_white.svg" alt="" id="star">
+            <img src="main/assets/star_white.svg" alt="image" id="star">
             <h1 class="title">Lantanoidlar</h1>
         </div>
 
@@ -86,8 +85,8 @@
 
         <div class="actinity-title">
             <div class="stars">
-                <img src="./main/assets/star_white.svg" alt="" id="star">
-                <img src="./main/assets/star_white.svg" alt="" id="star">
+                <img src="./main/assets/star_white.svg" alt="image" id="star">
+                <img src="./main/assets/star_white.svg" alt="image" id="star">
             </div>
             <h1 class="title">Aktinoidlar</h1>
         </div>
