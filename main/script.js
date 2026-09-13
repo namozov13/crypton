@@ -21,6 +21,7 @@ const lightBtn = document.querySelector('.light')
 const images = document.querySelectorAll("#star")
 const icon = document.querySelector(".iconSvg")
 const search = document.querySelector(".searchIcon")
+
 const dark = () => {
     body.classList.add("darkMode")
     darkBtn.classList.add("hidden")
@@ -41,11 +42,15 @@ const light = () => {
     search.src = "./main/assets/search-dark.svg"
 }
 
-if (localStorage.getItem("mode") === "darkmode") {
-    dark()
-} else if(localStorage.getItem("mode") === "lightmode"){
-    light()
+const checkMode = () => {
+    if (localStorage.getItem("mode") === "darkmode") {
+        dark()
+    } else if (localStorage.getItem("mode") === "lightmode") {
+        light()
+    }
 }
+
+checkMode()
 
 lightBtn.addEventListener('click', () => {
     light()
@@ -113,7 +118,7 @@ form.addEventListener('input', (e) => {
 
     if (val === '') return;
 
-    let found = false
+    let found = false;
 
     searchDatabase.forEach((item) => {
         const itemId = item.id.toLowerCase()
@@ -128,7 +133,7 @@ form.addEventListener('input', (e) => {
                        <div class="elInfo">
                             <div class="symbol">
                                 <h3 class="elFormula">${item.id}</h3>
-                                <img src="main/assets/star_black.svg">
+                                 <img src="main/assets/star_black.svg" alt="image">
                             </div>
                             <p class="atomic-mass">${item.atomMass}</p>
                             <p class="elName">${item.name}</p>
@@ -143,8 +148,8 @@ form.addEventListener('input', (e) => {
                             <div class="symbol">
                                 <h3 class="elFormula">${item.id}</h3>
                                 <div class='stars'>
-                                    <img src="main/assets/star_black.svg">
-                                    <img src="main/assets/star_black.svg">
+                                     <img src="main/assets/star_black.svg" alt="image">
+                                     <img src="main/assets/star_black.svg" alt="image">
                                 </div>
                             </div>
                             <p class="atomic-mass">${item.atomMass}</p>
@@ -195,7 +200,7 @@ const update = (database, loc) => {
                    <div class="elInfo">
                         <div class="symbol">
                             <h3 class="elFormula">${id}</h3>
-                            <img src="main/assets/star_black.svg">
+                             <img src="main/assets/star_black.svg" alt="image">
                         </div>
                         <p class="atomic-mass">${atomMass}</p>
                         <p class="elName">${name}</p>
@@ -210,8 +215,8 @@ const update = (database, loc) => {
                         <div class="symbol">
                             <h3 class="elFormula">${id}</h3>
                             <div class="stars">            
-                                <img src="main/assets/star_black.svg">
-                                <img src="main/assets/star_black.svg">
+                                 <img src="main/assets/star_black.svg" alt="image">
+                                 <img src="main/assets/star_black.svg" alt="image">
                             </div>
                         </div>
                         <p class="atomic-mass">${atomMass}</p>
@@ -245,6 +250,17 @@ const update = (database, loc) => {
     });
 }
 
+const styleFunc = () => {
+    if (window.innerWidth < 1030) {
+        const widthEL = document.querySelectorAll('.element');
+        widthEL.forEach(item => {
+            item.removeAttribute('style');
+            console.log(item);
+        })
+    }
+}
+
+
 getData(API).then(data => {
     searchDatabase = data;
     const lantanoidlar = data.filter(item => item.ingroup === 'Lantanoidlar');
@@ -253,4 +269,6 @@ getData(API).then(data => {
     update(aktinoidlar, aktiTable);
     const others = data.filter(item => item.ingroup !== 'Lantanoidlar' && item.ingroup !== 'Aktinoidlar');
     update(others, mainTable);
+
+    styleFunc();
 }).catch(err => err.message);

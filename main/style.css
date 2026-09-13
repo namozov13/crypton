@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    font-family: 'Montserrat', Courier, monospace;
     user-select: none;
     transition: all ease-in-out .3s;
 }
@@ -12,10 +14,14 @@
     opacity: 1;
 }
 
+.btns {
+    margin-left: -120px;
+    display: flex;
+    align-items: start;
+    gap: 40px;
+}
+
 .mode {
-    position: absolute;
-    top: 3px;
-    right: 380px;
     cursor: pointer;
 }
 
@@ -243,6 +249,87 @@ body {
     grid-template-columns: repeat(3, 100px);
 }
 
+.forResMain310 {
+    display: grid !important;
+    grid-template-columns: repeat(3, 100px) !important;
+    grid-template-rows: repeat(30, 1fr) !important;
+    grid-row-gap: 5px;
+    grid-row-gap: 5px;
+}
+
+.forRes310 {
+    display: grid !important;
+    grid-template-columns: repeat(3, 100px) !important;
+    grid-template-rows: repeat(5, 1fr) !important;
+    grid-row-gap: 5px;
+    grid-row-gap: 5px;
+}
+
+.forResMain410 {
+    display: grid !important;
+    grid-template-columns: repeat(4, 100px) !important;
+    grid-template-rows: repeat(23, 1fr) !important;
+    grid-row-gap: 5px;
+    grid-row-gap: 5px;
+}
+
+.forRes410 {
+    display: grid !important;
+    grid-template-columns: repeat(4, 100px) !important;
+    grid-template-rows: repeat(4, 1fr) !important;
+    grid-row-gap: 5px;
+    grid-row-gap: 5px;
+}
+
+.forResMain510 {
+    display: grid !important;
+    grid-template-columns: repeat(5, 100px) !important;
+    grid-template-rows: repeat(18, 1fr) !important;
+    grid-row-gap: 3px;
+    grid-row-gap: 3px;
+}
+
+.forRes510 {
+    display: grid !important;
+    grid-template-columns: repeat(5, 100px) !important;
+    grid-template-rows: repeat(3, 1fr) !important;
+    grid-row-gap: 3px;
+    grid-row-gap: 3px;
+}
+
+.forResMain610 {
+    display: grid !important;
+    grid-template-columns: repeat(6, 100px) !important;
+    grid-template-rows: repeat(15, 1fr) !important;
+    grid-row-gap: 3px;
+    grid-row-gap: 3px;
+}
+
+.forRes610 {
+    display: grid !important;
+    grid-template-columns: repeat(6, 100px) !important;
+    grid-template-rows: repeat(3, 1fr) !important;
+    grid-row-gap: 3px;
+    grid-row-gap: 3px;
+}
+
+.forResMain710 {
+    display: grid !important;
+    grid-template-columns: repeat(7, 100px) !important;
+    grid-template-rows: repeat(14, 1fr) !important;
+    grid-row-gap: 3px;
+    grid-row-gap: 3px;
+}
+
+.forRes710 {
+    display: grid !important;
+    grid-template-columns: repeat(7, 100px) !important;
+    grid-template-rows: repeat(2, 1fr) !important;
+    grid-row-gap: 3px;
+    grid-row-gap: 3px;
+}
+
+
 .overlay {
     position: fixed;
     top: 0;
@@ -265,8 +352,6 @@ input:focus-visible {
 #showBtn {
     background: none;
     border: none;
-    position: absolute;
-    right: 300px;
 }
 
 .xmark {
@@ -439,6 +524,7 @@ main {
     transform: translateY(-3px);
 }
 
+
 .part.f {
     border-left: 4px solid var(--color-f);
 }
@@ -452,9 +538,10 @@ main {
     transform: translateY(-3px);
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1500px) {
     body {
-        display: block;
+        display: flex;
+        flex-direction: column;
         padding: 5px;
         margin: 65px 0 0 0;
     }
@@ -480,12 +567,10 @@ main {
     }
 
     .periodic-table,
-    .table,
-    .lantinity-title,
-    .actinity-title {
+    .table {
+        display: grid;
         transform: none !important;
         margin: 0 auto 20px auto !important;
-        display: grid;
     }
 
     .lantinity-title,
@@ -502,10 +587,8 @@ main {
         top: 10px;
     }
 
-    #showBtn {
-        position: absolute;
-        top: 25px;
-        left: 190px;
+    .btns {
+        margin: 0;
     }
 
     .mode {
@@ -541,5 +624,98 @@ main {
 
     .iconText {
         display: inline;
+    }
+}
+
+@media (min-width: 2250px) {
+    body {
+        padding: 300px 0 100px 400px;
+        transform: scale(2);
+    }
+}
+
+@media (min-width: 1960px) {
+    .icon {
+        display: none;
+    }
+}
+
+@media (max-width: 1000px) {
+    .periodic-table {
+        display: grid !important;
+        grid-template-columns: repeat(7, 100px) !important;
+        grid-template-rows: repeat(13, 1fr) !important;
+        grid-row-gap: 5px;
+        grid-row-gap: 5px;
+    }
+
+    .table {
+        display: grid !important;
+        grid-template-columns: repeat(7, 100px) !important;
+        grid-template-rows: repeat(2, 1fr) !important;
+    }
+}
+
+@media (max-width: 700px) {
+    .periodic-table {
+        display: grid !important;
+        grid-template-columns: repeat(6, 100px) !important;
+        grid-template-rows: repeat(15, 1fr) !important;
+        grid-row-gap: 5px;
+        grid-row-gap: 5px;
+    }
+
+    .table {
+        display: grid !important;
+        grid-template-columns: repeat(6, 100px) !important;
+        grid-template-rows: repeat(3, 1fr) !important;
+    }
+}
+
+@media (max-width: 620px) {
+    .periodic-table {
+        display: grid !important;
+        grid-template-columns: repeat(5, 100px) !important;
+        grid-template-rows: repeat(18, 1fr) !important;
+        grid-row-gap: 5px;
+        grid-row-gap: 5px;
+    }
+
+    .table {
+        display: grid !important;
+        grid-template-columns: repeat(5, 100px) !important;
+        grid-template-rows: repeat(3, 1fr) !important;
+    }
+}
+
+@media (max-width: 500px) {
+    .periodic-table {
+        display: grid !important;
+        grid-template-columns: repeat(4, 100px) !important;
+        grid-template-rows: repeat(23, 1fr) !important;
+        grid-row-gap: 5px;
+        grid-row-gap: 5px;
+    }
+
+    .table {
+        display: grid !important;
+        grid-template-columns: repeat(4, 100px) !important;
+        grid-template-rows: repeat(4, 1fr) !important;
+    }
+}
+
+@media (max-width: 400px) {
+    .periodic-table {
+        display: grid !important;
+        grid-template-columns: repeat(3, 100px) !important;
+        grid-template-rows: repeat(30, 1fr) !important;
+        grid-row-gap: 5px;
+        grid-row-gap: 5px;
+    }
+
+    .table {
+        display: grid !important;
+        grid-template-columns: repeat(3, 100px) !important;
+        grid-template-rows: repeat(5, 1fr) !important;
     }
 }
